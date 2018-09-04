@@ -1,0 +1,31 @@
+import math
+
+# calculating the mean of a list. Add data together divide by number of trials in sample.
+dataset = [6,9,12,14,18,22];
+some = sum(dataset) / len(dataset);
+# ---------------------------------
+mean = some; # mean is the mean of the data set.
+
+top = [(x-mean)** 2 for x in dataset]; # subtracts data from mean and squares it.
+
+topSum = sum(top); # Sums all the data in the denominator.
+# print(topSum);
+
+n = len(dataset) # Degrees of freedom subtract 1 from data size. numerator 
+bottom = n - 1;
+# print(bottom);
+
+
+stSquare = topSum / bottom; # divides denominator and numerator 
+# print(stSquare);
+
+s = math.sqrt(stSquare); # squares the quotient of topSum and bottom, outputs stdev.
+# print(s);
+
+SE = s/math.sqrt(len(dataset)); # Standard error 
+
+
+print("mean = " + " " + str(mean)); # prints mean
+print("n = " + " " + str(len(dataset))); # prints sample size
+print("Standard Deviation = " + " " + str(s)); # prints standard deviation
+print("Standard Error = " + " " + str(SE)); # prints standard error
